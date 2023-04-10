@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function enviar(){
+            let id = document.getElementById("reg").value
+            console.log("meu id" + id)
+            fetch("http://localhost:3000/" + id)
+                .then(resp => resp.text())
+                .then(texto => atualizarInterface(texto))
+        }
+        function atualizarInterface(texto){
+            document.getElementById("conteudo").innerHTML=texto
+            console.log(texto)
+        }
+        function somar(){
+            let op1 = document.getElementById("reg1").value
+            let op2 = document.getElementById("reg2").value
+            fetch("http://localhost:3000/soma/" + op1 + "/" + op2)
+            .then(resp=>resp.text())
+            .then(texto=>atualizarInterface(texto))
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="reg1">
+    <input type="text" id="reg2">
+    <button onClick="somar()">Enviar</button>
+    <h1 id="conteudo"></h1>
+</body>
+</html>
