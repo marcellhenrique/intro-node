@@ -1,6 +1,4 @@
-
-
-function App(){
+function App() {
 
   const lista = [
     {titulo: 'lixeira', id:1},
@@ -11,16 +9,16 @@ function App(){
     alert("Tarefa feita!")
   }
 
-  const lista2 = lista.map((item)=> <button key={item.id} onClick={Clicou}>{item.titulo}</button>)
-
+  const lista2 = lista.map((item)=> <li key={item.id} ><input type="checkbox" onClick={Clicou}/>{item.titulo}</li>)
 
   return(
     <div>
       <ul>
         {lista2}
         <br/>
-        </ul>
+      </ul>
     </div>
   )
 }
+
 export default App;
