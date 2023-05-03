@@ -1,0 +1,30 @@
+import {Container, Button} from '@mui/material';
+import Grid from '@mui/material/Grid';
+//import './App.css'
+import './marcell.css'
+
+function App() {
+
+  return (
+    <div>
+      <Container maxWidth="sm">
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <Button variant='contained' className='botao'>xs=8</Button>
+        </Grid>
+        <Grid item xs={4}>
+        <Button variant='outlined' className='botao'>xs=4</Button>
+        </Grid>
+        <Grid item xs={4}>
+        <Button variant='contained' className='botao'>xs=4</Button>
+        </Grid>
+        <Grid item xs={8}>
+        <Button variant='outlined' className='botao'>xs=8</Button>
+        </Grid>
+      </Grid>
+      </Container>
+    </div>
+  )
+}
+
+export default App
